@@ -22,4 +22,6 @@ pip3 install -r requirements.txt
 // Run application
 flask run 
 
+// Project builds at http://localhost:5000
+
 
