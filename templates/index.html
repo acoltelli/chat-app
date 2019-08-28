@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+{% block content %}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+  {% if name %}
+  <a class="btn btn-light ml-auto" href="{{ url_for('account', name=name) }}">Account</a>
+  {% endif %}
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      {% if name %}
+      <h4>Welcome, {{ name }}</h4>
+      <h5> Channels: </h5>
+      {% for room in rooms %}
+      <ul style="list-style-type:none;">
+        <li><a id="{{ room }}" value="{{ room }}" href="{{ url_for('.helper', foo=room ) }}"> #{{ room }} </a></li>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="col">
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.room.label }}: {{ form.room(class="form-control form-control-sm") }}
+        {% for error in form.room.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+        {{ form.submit(class="btn btn-light") }}
+      </form>
+    </div>
+  </div>
+
+  {% else %}
+  <div class="form-group" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h1>Flask-Chat</h1>
+    <small> Please create a display name before chatting!</small>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.name(class="form-control form-control-sm") }}
+      {% for error in form.name.errors %}
+      <span>{{ error }}</span>
+      {% endfor %}
+      {{ form.submit(class="btn btn-light") }}
+    </form>
+  </div>
+  {% endif %}
+</div>
+{% endblock content %}

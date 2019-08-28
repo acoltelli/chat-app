@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block content %}
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+  <a class="btn btn-light ml-auto" href="{{ url_for('index') }}" onclick="leave_room();">Exit Channel</a>
+</nav>
+<div class="container">
+  <h5>#{{ room }}</h5>
+  <textarea style="resize: none; border:none" id="chat" class="md-textarea form-control" rows="10" placeholder='' readonly>
+  {% for i in data %}{{ i[0] + " @ " + i[1] + " : " + i[2] }}
+  {% endfor %}</textarea>
+  <input id="text" class="form-control form-control-sm" size="80" placeholder="Enter your message here">
+</div>
+{% endblock content %}
