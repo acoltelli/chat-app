@@ -4,7 +4,7 @@ Chat app with barebones front end, allows user to choose a username and join an 
 
 
 ## Stack
-This project is built using a Flask and [Socket.IO](https://socket.io/), a javascript library which enables realtime communication between web clients and servers using the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol.
+This project is built using a Flask and [Socket.IO](https://socket.io/), a javascript library which enables realtime communication between web clients and servers using the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol. Message history is currently stored locally but migration to a database is trivial with Flask. 
 
 ## Build Instructions
 
