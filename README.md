@@ -4,11 +4,11 @@ Chat app with barebones front end, allows user to choose a username and join an 
 
 
 ## Stack
-This project is built using a Flask and [Socket.IO](https://socket.io/), a javascript library which enables realtime communication between web clients and servers using the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol. Message history is currently stored locally but migration to a database is trivial with Flask. 
+This project is built using Flask and [Socket.IO](https://socket.io/), a javascript library which enables realtime communication between web clients and servers using the [WebSocket](https://en.wikipedia.org/wiki/WebSocket) protocol. Message history is currently stored locally but migration to a database is trivial with Flask. 
 
 ## Build Instructions
 
-Create .env file in project. Copy and paste the following.  
+Create .env file in project. Copy and paste the following choosing your own secret key.
 ```
 export FLASK_APP = application.py
 export SECRET_KEY = '<some-secret-key>'
