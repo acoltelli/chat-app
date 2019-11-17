@@ -1,5 +1,5 @@
 Flask
 Flask-SocketIO
 flask-wtf
-flask_session
+flask-session
 gunicorn
