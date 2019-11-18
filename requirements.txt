@@ -3,3 +3,4 @@ Flask-SocketIO
 flask-wtf
 flask-session
 gunicorn
+eventlet
