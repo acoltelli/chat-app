@@ -1,6 +1,6 @@
 var socket;
 $(document).ready(function(){
-    socket = io.connect('https://' + document.domain + ':' + location.port + '/chat', {rejectUnauthorized: false};
+    socket = io.connect('https://' + document.domain + ':' + location.port + '/chat', {rejectUnauthorized: false});
     console.log("test connect")
     socket.on('connect', function() {
         socket.emit('joined', {});
